@@ -206,7 +206,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 ENABLE_VENDOR_RIL_SERVICE := true
 
 # SELinux
-include device/qcom/sepolicy_vndr/SEPolicy.mk
+include device/xiaomi/fog/sepolicy/vndr/SEPolicy.mk
 
 # Touchpanel
 TARGET_TAP_TO_WAKE_NODE := "/proc/tp_gesture"
