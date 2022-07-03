@@ -25,6 +25,18 @@ PRODUCT_PACKAGES += \
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_BUILD_SUPER_PARTITION := false
 
+# Boot control HAL
+PRODUCT_PACKAGES += \
+    android.hardware.boot@1.1-impl-qti \
+    android.hardware.boot@1.1-impl-qti.recovery \
+    android.hardware.boot@1.1-service
+
+PRODUCT_HOST_PACKAGES += \
+    brillo_update_payload
+
+PRODUCT_PACKAGES_DEBUG += \
+    bootctl
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
@@ -84,3 +96,10 @@ PRODUCT_PACKAGES += \
 
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 29
+
+# Update Engine
+PRODUCT_PACKAGES += \
+    update_engine \
+    update_engine_client \
+    update_engine_sideload \
+    update_verifier
