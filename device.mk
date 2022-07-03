@@ -98,6 +98,27 @@ PRODUCT_PACKAGES += \
     libhwbinder \
     libhwbinder.vendor
 
+# Ramdisk
+PRODUCT_PACKAGES += \
+    init.class_main.sh \
+    init.qcom.early_boot.sh \
+    init.qcom.post_boot.sh \
+    init.qcom.sh \
+    init.qti.dcvs.sh
+
+PRODUCT_PACKAGES += \
+    init.qcom.factory.rc \
+    init.qcom.rc \
+    init.qti.ufs.rc \
+    init.target.rc \
+    fstab.default \
+    fstab.emmc \
+    ueventd.qcom.rc
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/fstab.default:$(TARGET_COPY_OUT_RAMDISK)/fstab.default \
+    $(LOCAL_PATH)/rootdir/etc/fstab.emmc:$(TARGET_COPY_OUT_RAMDISK)/fstab.emmc
+
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 29
 
