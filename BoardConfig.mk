@@ -127,6 +127,11 @@ TARGET_BOARD_PLATFORM := bengal
 # Power
 TARGET_USES_INTERACTION_BOOST := true
 
+# Properties
+TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+
 # Security patch level
 VENDOR_SECURITY_PATCH := 2022-06-01
 
